@@ -23,14 +23,10 @@ import lombok.ToString;
 @Table(name = "ProfessorTable")
 @Entity
 public class Professor extends Person{
-	@Id
-	@Column(name = "Idp")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Setter(value = AccessLevel.NONE)
-	private int idp;
 
+	//ID nāks no personas klases
 		
-	@NotNull
+	//@NotNull - jāņem nosts, jo ar SINGLE inheratnce stratēgiju studenti un profesero būs vienā tabulā, kur Studentiem nebūs degree
 	@Column(name="Degree")
 	private Degree degree;
 	
